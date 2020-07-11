@@ -1,4 +1,4 @@
-# phpR
+# TexLab\R
 
 ## install
 ```
