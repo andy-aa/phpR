@@ -5,6 +5,7 @@
 
 ```
 
+### usage example
 ```php
 <?php
 
@@ -22,7 +23,7 @@ R);
 
 echo join("\n", $res);
 ```
-output
+### output
 ```
 Call:
 lm(formula = y ~ x)
