@@ -2,7 +2,7 @@
 
 ## install
 ```
-
+composer require texlab/r
 ```
 
 ### usage example
