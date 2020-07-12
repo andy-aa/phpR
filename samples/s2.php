@@ -3,7 +3,7 @@
 use TexLab\R\Script;
 use TexLab\R\Runner;
 
-require "../../vendor/autoload.php";
+require "../vendor/autoload.php";
 
 $r = new Script(new Runner('Rscript.exe'));
 

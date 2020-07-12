@@ -2,7 +2,7 @@
 
 use TexLab\R\Runner;
 
-require "../../vendor/autoload.php";
+require "../vendor/autoload.php";
 
 $r = new Runner('Rscript.exe');
 
