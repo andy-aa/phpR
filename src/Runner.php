@@ -2,9 +2,9 @@
 
 namespace TexLab\R;
 
-class Runner
+class Runner implements RunnerInterface
 {
-    protected $path;
+    protected string $path;
 
     /**
      * Runner constructor.
@@ -35,7 +35,6 @@ class Runner
         fclose($temp);
 
         return $output;
-
     }
 
     /**
