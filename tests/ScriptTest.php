@@ -11,7 +11,7 @@ use TexLab\R\Script;
 class ScriptTest extends TestCase
 {
 
-    function testOption()
+    function testOption(): void
     {
         $script = new Script(
             new Runner('Rscript.exe')

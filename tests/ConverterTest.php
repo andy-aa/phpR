@@ -9,7 +9,7 @@ use TexLab\R\Converter;
 class ConverterTest extends TestCase
 {
 
-    function testOption()
+    function testOption(): void
     {
         $converter = new Converter();
 //        $converter = new class() { use Converter; };
