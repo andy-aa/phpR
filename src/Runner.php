@@ -37,7 +37,6 @@ class Runner implements RunnerInterface
         return $output;
     }
 
-
     /**
      * @param string $path
      * @return $this|object

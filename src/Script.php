@@ -16,8 +16,12 @@ class Script extends AbstractScript
         $this->runner = $runner;
     }
 
-    public function run(): string
+    public function run(string $script = null): string
     {
+        if ($script !== null) {
+            $this->setScript($script);
+        }
+
         return join("\n", $this->runner->run($this->getFullScript()));
     }
 
