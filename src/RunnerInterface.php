@@ -12,7 +12,7 @@ interface RunnerInterface
 
     /**
      * @param string $path
-     * @return Runner
+     * @return $this|object
      */
-    public function setPath(string $path);
+    public function setPath(string $path): object;
 }

@@ -9,7 +9,7 @@ use TexLab\R\Runner;
 class RunnerTest extends TestCase
 {
 
-    function testOption()
+    function testOption():void
     {
 
         $runner = new Runner('Rscript.exe');

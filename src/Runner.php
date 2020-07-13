@@ -4,7 +4,7 @@ namespace TexLab\R;
 
 class Runner implements RunnerInterface
 {
-    protected string $path;
+    protected string $path = '';
 
     /**
      * Runner constructor.
@@ -37,11 +37,12 @@ class Runner implements RunnerInterface
         return $output;
     }
 
+
     /**
      * @param string $path
-     * @return Runner
+     * @return $this|object
      */
-    public function setPath(string $path)
+    public function setPath(string $path): object
     {
         $this->path = $path;
         return $this;

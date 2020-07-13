@@ -10,7 +10,7 @@ abstract class AbstractScript
     protected string $script = '';
     protected string $footer = '';
 
-    public function reset()
+    public function reset(): object
     {
         return $this
             ->setHeader('')
@@ -23,42 +23,41 @@ abstract class AbstractScript
         return $this->header . $this->script . $this->footer;
     }
 
-    public function setHeader(string $header)
+    public function setHeader(string $header): object
     {
         $this->header = $header;
         return $this;
     }
 
-
-    public function addHeader(string $header)
+    public function addHeader(string $header): object
     {
         $this->header .= $header;
         return $this;
     }
 
 
-    public function setFooter(string $footer)
+    public function setFooter(string $footer): object
     {
         $this->footer = $footer;
         return $this;
     }
 
 
-    public function addFooter(string $footer)
+    public function addFooter(string $footer): object
     {
         $this->footer .= $footer;
         return $this;
     }
 
 
-    public function setScript(string $script)
+    public function setScript(string $script): object
     {
         $this->script = $script;
         return $this;
     }
 
 
-    public function addScript(string $script)
+    public function addScript(string $script): object
     {
         $this->script .= $script;
         return $this;
