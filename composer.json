@@ -1,7 +1,6 @@
 {
   "name": "texlab/r",
-  "description": "description",
-  "minimum-stability": "stable",
+  "description": "Running R code from PHP",
   "license": "MIT",
   "require": {
     "php": ">=7.4"

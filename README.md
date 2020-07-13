@@ -1,4 +1,7 @@
 # TexLab\R
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Unstable Version](https://img.shields.io/packagist/vpre/texlab/lightdb.svg)](https://packagist.org/packages/texlab/r)
+
 
 ## install
 ```
@@ -15,11 +18,13 @@ require "../vendor/autoload.php";
 
 $r = new Runner('Rscript.exe');
 
-$res = $r->run(<<<R
+$code = <<<R
 x=1:10
 y=5+1*x+rnorm(10)
 summary(lm(y~x));
-R);
+R;
+
+$res = $r->run($code);
 
 echo join("\n", $res);
 ```
