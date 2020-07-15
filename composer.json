@@ -17,7 +17,7 @@
   },
   "scripts": {
     "test": "phpunit --testsuite alltests",
-    "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon",
-    "psalm": "vendor/bin/psalm"
+    "phpstan": "phpstan analyse -c phpstan.neon",
+    "psalm": "psalm"
   }
 }

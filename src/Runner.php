@@ -21,7 +21,7 @@ class Runner implements RunnerInterface
      * @param string $script
      * @return array
      */
-    public function run(string $script): array
+    public function run(string $script): string
     {
         $temp = tmpfile();
 
@@ -34,7 +34,7 @@ class Runner implements RunnerInterface
 
         fclose($temp);
 
-        return $output;
+        return join("\n", $output);
     }
 
     /**

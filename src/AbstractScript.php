@@ -8,7 +8,13 @@ abstract class AbstractScript
 {
     protected string $header = '';
     protected string $script = '';
-    protected string $footer = '';
+    protected string $footer = <<<'FOOTER'
+
+for(i in ls()[startsWith(ls(), "php_")]){
+ 	cat(paste0(i, " = ", get(i), "\n"), sep = "")
+}
+FOOTER;
+
 
     /**
      * @return $this|object
@@ -21,6 +27,9 @@ abstract class AbstractScript
             ->setFooter('');
     }
 
+    /**
+     * @return string
+     */
     public function getFullScript(): string
     {
         return $this->header . $this->script . $this->footer;

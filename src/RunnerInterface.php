@@ -8,7 +8,7 @@ interface RunnerInterface
      * @param string $script
      * @return array
      */
-    public function run(string $script): array;
+    public function run(string $script): string;
 
     /**
      * @param string $path

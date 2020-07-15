@@ -12,6 +12,8 @@ $dataArray = [
     'y' => [1, 3, 2, 4, 4, 6, 6]
 ];
 
-echo $r
-    ->addDataFrame("data", $dataArray)
-    ->run("summary(lm(y~x, data=data));");
+print_r(
+    $r
+        ->addDataFrame("data", $dataArray)
+        ->run("php_x <- data['x'];")
+);

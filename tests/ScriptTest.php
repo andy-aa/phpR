@@ -19,7 +19,7 @@ class ScriptTest extends TestCase
 
         $this->assertEquals(
             '',
-            $script->getFullScript()
+            $script->reset()->getFullScript()
         );
 
         $this->assertEquals(
@@ -41,13 +41,13 @@ class ScriptTest extends TestCase
         );
 
         $this->assertEquals(
-            '[1] 21',
+            [],
             $script
-                ->reset()
+//                ->reset()
                 ->addVector('x', [1, 2, 3])
                 ->addVector('y', [4, 5, 6])
-                ->setScript('sum(x+y)')
-                ->run()
+//                ->setScript()
+                ->run('php_x = sum(x+y)')
         );
     }
 
