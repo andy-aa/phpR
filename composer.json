@@ -16,6 +16,11 @@
     }
   },
   "scripts": {
+    "ci:test": [
+      "@test",
+      "@phpstan",
+      "@psalm"
+    ],
     "test": "phpunit --testsuite alltests",
     "phpstan": "phpstan analyse -c phpstan.neon",
     "psalm": "psalm"
