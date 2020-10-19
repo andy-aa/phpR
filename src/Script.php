@@ -38,7 +38,7 @@ class Script extends AbstractScript
      * @param string $script
      * @return array<mixed, mixed>
      */
-    public function run(string $script = ''): array
+    public function run(string $script = '')
     {
         if ($script !== '') {
             $this->setScript($script);

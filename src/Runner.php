@@ -21,7 +21,7 @@ class Runner implements RunnerInterface
      * @param string $script
      * @return string
      */
-    public function run(string $script): string
+    public function run(string $script)
     {
         $temp = tmpfile();
 
@@ -45,9 +45,9 @@ class Runner implements RunnerInterface
 
     /**
      * @param string $path
-     * @return $this|object
+     * @return $this
      */
-    public function setPath(string $path): object
+    public function setPath(string $path)
     {
         $this->path = $path;
         return $this;

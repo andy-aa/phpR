@@ -11,7 +11,7 @@ class Converter
      * @param array<mixed> $data
      * @return string
      */
-    public function vector(string $name, array $data): string
+    public function vector(string $name, array $data)
     {
         return "$name <- c(" . join(', ', $data) . ");\n";
     }
@@ -21,7 +21,7 @@ class Converter
      * @param array<array<mixed>> $data
      * @return string
      */
-    public function dataFrame(string $name, array $data): string
+    public function dataFrame(string $name, array $data)
     {
         $columns = [];
         foreach ($data as $key => $value) {
