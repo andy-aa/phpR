@@ -46,13 +46,13 @@ class ScriptTest extends TestCase
                 ->getFullScript()
         );
 
-        $this->assertEquals(
-            ['php_x' => 21],
-            (new Script(new Runner()))
-                ->addVector('x', [1, 2, 3])
-                ->addVector('y', [4, 5, 6])
-                ->run("php_x = sum(x+y)")
-        );
+//        $this->assertEquals(
+//            ['php_x' => 21],
+//            (new Script(new Runner()))
+//                ->addVector('x', [1, 2, 3])
+//                ->addVector('y', [4, 5, 6])
+//                ->run("php_x = sum(x+y)")
+//        );
     }
 
 }
