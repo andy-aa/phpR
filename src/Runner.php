@@ -7,7 +7,7 @@ class Runner implements RunnerInterface
     /**
      * @var string
      */
-    protected $path = '';
+    protected string $path = '';
 
     /**
      * Runner constructor.

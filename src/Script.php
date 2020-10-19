@@ -15,19 +15,18 @@ class Script extends AbstractScript
     /**
      * @var Converter
      */
-    protected $converter;
+    protected Converter $converter;
 
     /**
      * @var RunnerInterface
      */
-    protected $runner;
+    protected RunnerInterface $runner;
 
     public function __construct(RunnerInterface $runner)
     {
         $this->converter = new Converter();
         $this->runner = $runner;
     }
-
 
     /**
      * @param string $result
@@ -36,7 +35,6 @@ class Script extends AbstractScript
     protected function parseVars(string $result)
     {
         preg_match_all("/(php_(.*)) = (.*)(\n|$)/", $result, $matches);
-
 
         return (array)array_combine(
             $matches[1],
