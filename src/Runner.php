@@ -14,6 +14,8 @@ class Runner implements RunnerInterface
     {
         if ($path !== null) {
             $this->setPath($path);
+        } else {
+            $this->setPath(PHP_OS_FAMILY === 'Windows' ? 'Rscript.exe' : 'Rscript');
         }
     }
 
