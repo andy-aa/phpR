@@ -21,25 +21,26 @@ class Script extends AbstractScript
 
     /**
      * @param string $result
-     * @return array<string>
+     * @return array<mixed, mixed>
      */
     protected function parseVars(string $result)
     {
         preg_match_all("/(php_(.*)) = (.*)(\n|$)/", $result, $matches);
 
-        return array_combine(
+
+        return (array)array_combine(
             $matches[1],
             $matches[3]
         );
     }
 
     /**
-     * @param string|null $script
-     * @return array<string>
+     * @param string $script
+     * @return array<mixed, mixed>
      */
-    public function run(string $script = null): array
+    public function run(string $script = ''): array
     {
-        if ($script !== null) {
+        if ($script !== '') {
             $this->setScript($script);
         }
 
@@ -63,7 +64,7 @@ class Script extends AbstractScript
 
     /**
      * @param string $name
-     * @param array<mixed> $data
+     * @param array<array<mixed>> $data
      * @return $this
      */
     public function addDataFrame(string $name, array $data)

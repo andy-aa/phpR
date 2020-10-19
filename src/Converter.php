@@ -18,7 +18,7 @@ class Converter
 
     /**
      * @param string $name
-     * @param array<mixed> $data
+     * @param array<array<mixed>> $data
      * @return string
      */
     public function dataFrame(string $name, array $data): string
