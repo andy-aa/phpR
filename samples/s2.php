@@ -5,7 +5,7 @@ use TexLab\R\Runner;
 
 require "../vendor/autoload.php";
 
-$r = new Runner('Rscript.exe');
+$r = new Runner();
 
 $code = <<<R
 data <- data.frame(

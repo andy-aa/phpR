@@ -5,7 +5,7 @@ use TexLab\R\Runner;
 
 require "../vendor/autoload.php";
 
-$r = new Script(new Runner('Rscript.exe'));
+$r = new Script(new Runner());
 
 $dataArray = [
     'x' => [1, 2, 3, 4, 5, 6, 7],
