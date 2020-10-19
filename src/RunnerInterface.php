@@ -6,7 +6,7 @@ interface RunnerInterface
 {
     /**
      * @param string $script
-     * @return array
+     * @return string
      */
     public function run(string $script): string;
 

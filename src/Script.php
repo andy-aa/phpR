@@ -19,6 +19,10 @@ class Script extends AbstractScript
     }
 
 
+    /**
+     * @param string $result
+     * @return array<string>
+     */
     protected function parseVars(string $result)
     {
         preg_match_all("/(php_(.*)) = (.*)(\n|$)/", $result, $matches);
@@ -29,6 +33,10 @@ class Script extends AbstractScript
         );
     }
 
+    /**
+     * @param string|null $script
+     * @return array<string>
+     */
     public function run(string $script = null): array
     {
         if ($script !== null) {
@@ -44,16 +52,21 @@ class Script extends AbstractScript
 
     /**
      * @param string $name
-     * @param array $data
-     * @return $this|object
+     * @param array<mixed> $data
+     * @return $this
      */
-    public function addVector(string $name, array $data): object
+    public function addVector(string $name, array $data)
     {
         $this->addHeader($this->converter->vector($name, $data));
         return $this;
     }
 
-    public function addDataFrame(string $name, array $data): object
+    /**
+     * @param string $name
+     * @param array<mixed> $data
+     * @return $this
+     */
+    public function addDataFrame(string $name, array $data)
     {
         $this->addHeader($this->converter->dataFrame($name, $data));
         return $this;

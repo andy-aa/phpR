@@ -6,11 +6,21 @@ namespace TexLab\R;
 
 class Converter
 {
+    /**
+     * @param string $name
+     * @param array<mixed> $data
+     * @return string
+     */
     public function vector(string $name, array $data): string
     {
         return "$name <- c(" . join(', ', $data) . ");\n";
     }
 
+    /**
+     * @param string $name
+     * @param array<mixed> $data
+     * @return string
+     */
     public function dataFrame(string $name, array $data): string
     {
         $columns = [];
