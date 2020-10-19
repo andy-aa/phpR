@@ -4,7 +4,10 @@ namespace TexLab\R;
 
 class Runner implements RunnerInterface
 {
-    protected string $path = '';
+    /**
+     * @var string
+     */
+    protected $path = '';
 
     /**
      * Runner constructor.

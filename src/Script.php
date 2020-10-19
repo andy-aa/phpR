@@ -7,10 +7,20 @@ namespace TexLab\R;
 class Script extends AbstractScript
 {
 
+    /**
+     * @var string
+     */
     protected string $prefix = 'php_';
 
-    protected Converter $converter;
-    protected RunnerInterface $runner;
+    /**
+     * @var Converter
+     */
+    protected $converter;
+
+    /**
+     * @var RunnerInterface
+     */
+    protected $runner;
 
     public function __construct(RunnerInterface $runner)
     {
