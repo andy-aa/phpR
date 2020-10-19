@@ -6,6 +6,7 @@ php:
 before_install:
   - sudo apt-get update
   - sudo apt install r-base
+  - R --version
 
 before_script:
   - composer install
