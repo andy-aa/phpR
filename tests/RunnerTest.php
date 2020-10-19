@@ -15,7 +15,7 @@ class RunnerTest extends TestCase
 
     public function setUp(): void
     {
-        $path = PHP_OS_FAMILY === 'Windows' ? 'Rscript.exe' : 'R';
+        $path = PHP_OS_FAMILY === 'Windows' ? 'Rscript.exe' : 'Rscript';
 //        $path = 'Rscript.exe';
         $this->runner = new Runner($path);
     }
