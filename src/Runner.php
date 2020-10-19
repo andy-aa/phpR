@@ -20,12 +20,12 @@ class Runner implements RunnerInterface
 
     /**
      * @param string $script
-     * @return string|false
+     * @return string
      */
     public function run(string $script)
     {
         if (($temp = tmpfile()) === false) {
-            return false;
+            return '';
         }
 
         fwrite($temp, $script);
