@@ -4,6 +4,7 @@ php:
   - 7.4
 
 before_install:
+  - sudo apt-get update
   - sudo apt install r-base
 
 script:
