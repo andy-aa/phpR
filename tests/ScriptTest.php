@@ -16,7 +16,7 @@ class ScriptTest extends TestCase
 
     public function setUp(): void
     {
-        $path = PHP_OS_FAMILY === 'Windows' ? 'Rscript.exe' : 'r';
+        $path = PHP_OS_FAMILY === 'Windows' ? 'Rscript.exe' : 'R';
 
         $this->script = new Script(
             new Runner($path)
