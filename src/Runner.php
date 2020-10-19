@@ -28,23 +28,20 @@ class Runner implements RunnerInterface
      */
     public function run(string $script)
     {
-        $temp = tmpfile();
-
-        if ($temp !== false) {
-
-            fwrite($temp, $script);
-
-            exec(
-                "$this->path " . stream_get_meta_data($temp)['uri'],
-                $output
-            );
-
-            fclose($temp);
-
-            return join("\n", $output);
-        } else {
+        if (($temp = tmpfile()) === false) {
             return '';
         }
+
+        fwrite($temp, $script);
+
+        exec(
+            "$this->path " . stream_get_meta_data($temp)['uri'],
+            $output
+        );
+
+        fclose($temp);
+
+        return join("\n", $output);
 
     }
 
