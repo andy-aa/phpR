@@ -8,7 +8,6 @@ before_install:
   - sudo apt install r-base
 
 before_script:
-  - composer self-update
   - composer install
 
 script:
