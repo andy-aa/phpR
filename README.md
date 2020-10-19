@@ -1,6 +1,8 @@
 # TexLab\R
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Unstable Version](https://img.shields.io/packagist/vpre/texlab/lightdb.svg)](https://packagist.org/packages/texlab/r)
+[![PHPStan](https://img.shields.io/badge/PHPStan-level%20Max-brightgreen.svg?style=flat-square)](https://phpstan.org/)
+[![Psalm](https://img.shields.io/badge/Psalm-Level%20Max-brightgreen.svg?style=flat-square)](https://psalm.dev/) 
 
 
 ## install
