@@ -15,21 +15,17 @@ class Runner implements RunnerInterface
      */
     public function __construct(string $path = null)
     {
-        if ($path !== null) {
-            $this->setPath($path);
-        } else {
-            $this->setPath(PHP_OS_FAMILY === 'Windows' ? 'Rscript.exe' : 'Rscript');
-        }
+        $this->setPath($path ?? PHP_OS_FAMILY === 'Windows' ? 'Rscript.exe' : 'Rscript');
     }
 
     /**
      * @param string $script
-     * @return string
+     * @return string|false
      */
     public function run(string $script)
     {
         if (($temp = tmpfile()) === false) {
-            return '';
+            return false;
         }
 
         fwrite($temp, $script);
@@ -54,5 +50,4 @@ class Runner implements RunnerInterface
         $this->path = $path;
         return $this;
     }
-
 }

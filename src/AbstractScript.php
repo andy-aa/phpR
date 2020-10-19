@@ -8,13 +8,37 @@ abstract class AbstractScript
 {
     protected string $header = '';
     protected string $script = '';
-    protected string $footer = <<<'FOOTER'
+    protected string $footer = '';
 
-for(i in ls()[startsWith(ls(), "php_")]){
+    /**
+     * @var string
+     */
+    protected string $prefix = 'php_';
+
+    public function __construct()
+    {
+        $this->setFooter(<<<FOOTER
+
+for(i in ls()[startsWith(ls(), "$this->prefix")]){
  	cat(paste0(i, " = ", get(i), "\n"), sep = "")
 }
-FOOTER;
+FOOTER
+        );
+    }
 
+    /**
+     * @param string $result
+     * @return array<mixed, mixed>
+     */
+    protected function parseVars(string $result)
+    {
+        preg_match_all("/($this->prefix(.*)) = (.*)(\n|$)/", $result, $matches);
+
+        return (array)array_combine(
+            $matches[1],
+            $matches[3]
+        );
+    }
 
     /**
      * @return $this

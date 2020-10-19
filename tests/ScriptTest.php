@@ -16,9 +16,7 @@ class ScriptTest extends TestCase
 
     public function setUp(): void
     {
-        $this->script = new Script(
-            new Runner()
-        );
+        $this->script = new Script(new Runner());
     }
 
     function testOption(): void
@@ -32,6 +30,7 @@ class ScriptTest extends TestCase
         $this->assertEquals(
             "x <- c(1, 2, 3);\ny <- c(4, 5, 6);\n",
             $this->script
+                ->reset()
                 ->addVector('x', [1, 2, 3])
                 ->addVector('y', [4, 5, 6])
                 ->getFullScript()
@@ -48,11 +47,11 @@ class ScriptTest extends TestCase
         );
 
         $this->assertEquals(
-            [],
-            $this->script
+            ['php_x' => 21],
+            (new Script(new Runner()))
                 ->addVector('x', [1, 2, 3])
                 ->addVector('y', [4, 5, 6])
-                ->run('php_x = sum(x+y)')
+                ->run("php_x = sum(x+y)")
         );
     }
 

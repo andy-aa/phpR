@@ -6,12 +6,6 @@ namespace TexLab\R;
 
 class Script extends AbstractScript
 {
-
-    /**
-     * @var string
-     */
-    protected string $prefix = 'php_';
-
     /**
      * @var Converter
      */
@@ -24,31 +18,18 @@ class Script extends AbstractScript
 
     public function __construct(RunnerInterface $runner)
     {
+        parent::__construct();
         $this->converter = new Converter();
         $this->runner = $runner;
     }
 
     /**
-     * @param string $result
+     * @param string|null $script
      * @return array<mixed, mixed>
      */
-    protected function parseVars(string $result)
+    public function run(string $script = null)
     {
-        preg_match_all("/(php_(.*)) = (.*)(\n|$)/", $result, $matches);
-
-        return (array)array_combine(
-            $matches[1],
-            $matches[3]
-        );
-    }
-
-    /**
-     * @param string $script
-     * @return array<mixed, mixed>
-     */
-    public function run(string $script = '')
-    {
-        if ($script !== '') {
+        if ($script !== null) {
             $this->setScript($script);
         }
 
