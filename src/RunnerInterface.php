@@ -14,5 +14,5 @@ interface RunnerInterface
      * @param string $path
      * @return $this
      */
-    public function setPath(string $path);
+    public function setExecutePath(string $path);
 }

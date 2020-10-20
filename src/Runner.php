@@ -17,7 +17,7 @@ class Runner implements RunnerInterface
      */
     public function __construct(string $path = null)
     {
-        $this->setPath($path ?? PHP_OS_FAMILY === 'Windows' ? 'Rscript.exe' : 'Rscript');
+        $this->setExecutePath($path ?? PHP_OS_FAMILY === 'Windows' ? 'Rscript.exe' : 'Rscript');
     }
 
     /**
@@ -48,7 +48,7 @@ class Runner implements RunnerInterface
      * @param string $path
      * @return $this
      */
-    public function setPath(string $path)
+    public function setExecutePath(string $path)
     {
         $this->path = $path;
         return $this;
