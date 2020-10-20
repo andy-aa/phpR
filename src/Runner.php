@@ -2,6 +2,8 @@
 
 namespace TexLab\R;
 
+use Exception;
+
 class Runner implements RunnerInterface
 {
     /**
@@ -21,11 +23,12 @@ class Runner implements RunnerInterface
     /**
      * @param string $script
      * @return string
+     * @throws Exception
      */
     public function run(string $script)
     {
         if (($temp = tmpfile()) === false) {
-            return '';
+            throw new Exception('Error creating temporary file.');
         }
 
         fwrite($temp, $script);
