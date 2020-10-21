@@ -1,5 +1,7 @@
 <?php
 
+header("Content-Type: text/plain");
+
 use TexLab\R\Runner;
 
 require "../vendor/autoload.php";

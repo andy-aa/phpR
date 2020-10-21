@@ -1,5 +1,7 @@
 <?php
 
+header("Content-Type: text/plain");
+
 use TexLab\R\Script;
 use TexLab\R\Runner;
 
@@ -12,8 +14,7 @@ $dataArray = [
     'y' => [1, 3, 2, 4, 4, 6, 6]
 ];
 
-print_r(
-    $r
-        ->addDataFrame("data", $dataArray)
-        ->run("php_x <- data['x'];")
-);
+echo $r
+    ->addDataFrame("data", $dataArray)
+    ->setScript("summary(lm(y~x, data=data));")
+    ->getFullScript();

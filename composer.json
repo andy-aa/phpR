@@ -31,6 +31,7 @@
     "codestyle:fix": "phpcbf",
     "phpmd": "phpmd src text /phpmd.xml",
     "phpstan": "phpstan analyse -c phpstan.neon",
-    "psalm": "psalm"
+    "psalm": "psalm",
+    "examples": "php -S localhost:8000 -t examples/"
   }
 }
