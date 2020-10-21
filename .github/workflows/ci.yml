@@ -12,6 +12,7 @@ jobs:
     strategy:
       matrix:
         operating-system: [ ubuntu-latest, windows-latest, macOS-latest ]
+        r-version: [ 3.5, 3.6 ]
 
     name: Test on ${{ matrix.operating-system }}
 
@@ -20,6 +21,9 @@ jobs:
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
+
+        with:
+          r-version: ${{ matrix.r-version }}
 
       - name: Check out R version
         run: R --version
