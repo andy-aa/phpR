@@ -27,15 +27,14 @@ FOOTER
     }
 
     /**
-     * @param string $result
+     * @param string $scriptOutput
      * @return array<string, string>
      * @throws Exception
-     *
      * @SuppressWarnings(PHPMD.UndefinedVariable)
      */
-    protected function parseVars(string $result)
+    protected function parseVars(string $scriptOutput)
     {
-        preg_match_all("/($this->prefix(.*)) = (.*)(\n|$)/", $result, $matches);
+        preg_match_all("/($this->prefix(.*)) = (.*)(\n|$)/", $scriptOutput, $matches);
 
         $result = array_combine(
             $matches[1],

@@ -24,7 +24,6 @@ class Runner implements RunnerInterface
      * @param string $script
      * @return string
      * @throws Exception
-     *
      * @SuppressWarnings(PHPMD.UndefinedVariable)
      */
     public function run(string $script)

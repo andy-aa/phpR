@@ -14,6 +14,10 @@ class Script extends AbstractScript
      */
     protected RunnerInterface $runner;
 
+    /**
+     * Script constructor.
+     * @param RunnerInterface $runner
+     */
     public function __construct(RunnerInterface $runner)
     {
         parent::__construct();
@@ -24,15 +28,13 @@ class Script extends AbstractScript
     /**
      * @param string|null $script
      * @return array<string, string>
+     * @throws \Exception
      */
     public function run(string $script = null)
     {
         if ($script !== null) {
             $this->setScript($script);
         }
-
-//        $result = join("\n", $this->runner->run($this->getFullScript()));
-//        $result = $this->runner->run($this->getFullScript());
 
         return $this->parseVars($this->runner->run($this->getFullScript()));
     }
