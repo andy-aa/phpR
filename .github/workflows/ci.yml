@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  ubuntu:
 
     runs-on: ubuntu-latest
 
@@ -22,3 +22,20 @@ jobs:
 
       - name: Run test suite
         run: composer ci:test
+
+  macOS:
+
+    runs-on: macOS-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Check out R version
+        run: R --version
+
+      - name: Run test suite
+        run: composer ci:test
+        
