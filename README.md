@@ -4,7 +4,7 @@
 [![Unstable Version](https://img.shields.io/packagist/vpre/texlab/lightdb.svg)](https://packagist.org/packages/texlab/r)
 [![PHPStan](https://img.shields.io/badge/PHPStan-level%20Max-brightgreen.svg?style=flat-square)](https://phpstan.org/)
 [![Psalm](https://img.shields.io/badge/Psalm-Level%20Max-brightgreen.svg?style=flat-square)](https://psalm.dev/) 
-
+[![Actions Status: test](https://github.com/andy-aa/phpR/workflows/CI/badge.svg)](https://github.com/andy-aa/phpR/actions?query=workflow%3ACI)
 
 ## install
 ```
