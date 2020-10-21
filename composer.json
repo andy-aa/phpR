@@ -19,6 +19,7 @@
   "scripts": {
     "ci:test": [
       "@test",
+      "@codestyle",
       "@phpstan",
       "@psalm"
     ],
