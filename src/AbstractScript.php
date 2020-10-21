@@ -28,7 +28,7 @@ FOOTER
 
     /**
      * @param string $result
-     * @return array<mixed, mixed>
+     * @return array<string, string>
      * @throws Exception
      *
      * @SuppressWarnings(PHPMD.UndefinedVariable)

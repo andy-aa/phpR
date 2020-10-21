@@ -23,7 +23,7 @@ class Script extends AbstractScript
 
     /**
      * @param string|null $script
-     * @return array<mixed, mixed>
+     * @return array<string, string>
      */
     public function run(string $script = null)
     {
