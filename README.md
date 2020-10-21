@@ -12,7 +12,7 @@ composer require texlab/r
 ```
 
 ### usage example
-####PHP code
+#### PHP code
 ```php
 <?php
 
@@ -55,7 +55,7 @@ Multiple R-squared:  0.9094,    Adjusted R-squared:  0.8981
 F-statistic: 80.29 on 1 and 8 DF,  p-value: 1.914e-05
 
 ```
-####PHP code
+#### PHP code
 ```php
 <?php
 
@@ -81,7 +81,6 @@ dev.off();
 php_plot_data <- paste("data:image/png;base64,", base64enc::base64encode(temp_file_name))
 
 file.remove(temp_file_name)
-
 R;
 
 $data = $r->run($code)
@@ -99,6 +98,5 @@ $data = $r->run($code)
 </html>
 ```
 #### output
-```
+![image](https://user-images.githubusercontent.com/46691193/96785554-a1f57500-13f7-11eb-907f-b5ef36c4ec97.png)
 
-```
