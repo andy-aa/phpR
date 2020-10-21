@@ -12,7 +12,6 @@ jobs:
     strategy:
       matrix:
         operating-system: [ ubuntu-latest, macOS-latest ]
-#        r-version: [ 3.5, 3.6 ]
 
     name: Test on ${{ matrix.operating-system }}
 
@@ -22,47 +21,8 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
-#      - name: Set up R ${{ matrix.r-version }}
-#        uses: r-lib/actions/setup-r@ffe45a39586f073cc2e9af79c4ba563b657dc6e3
-#        with:
-#          r-version: ${{ matrix.r-version }}
-
       - name: Check out R version
         run: R --version
 
       - name: Run test suite
         run: composer ci:test
-
-#
-#jobs:
-#  ubuntu:
-#
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - uses: actions/checkout@v2
-#
-#      - name: Install dependencies
-#        run: composer install --prefer-dist --no-progress --no-suggest
-#
-#      - name: Check out R version
-#        run: R --version
-#
-#      - name: Run test suite
-#        run: composer ci:test
-#
-#  macOS:
-#
-#    runs-on: macOS-latest
-#
-#    steps:
-#      - uses: actions/checkout@v2
-#
-#      - name: Install dependencies
-#        run: composer install --prefer-dist --no-progress --no-suggest
-#
-#      - name: Check out R version
-#        run: R --version
-#
-#      - name: Run test suite
-#        run: composer ci:test
