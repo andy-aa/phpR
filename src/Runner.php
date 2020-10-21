@@ -39,8 +39,13 @@ class Runner implements RunnerInterface
 
         exec(
             "$this->path " . stream_get_meta_data($temp)['uri'],
-            $output
+            $output,
+            $return_var
         );
+
+        if ($return_var !== 0) {
+            throw new Exception('Error execution R code.');
+        }
 
         fclose($temp);
 
