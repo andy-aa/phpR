@@ -24,10 +24,13 @@ class Runner implements RunnerInterface
      * @param string $script
      * @return string
      * @throws Exception
+     *
      */
     public function run(string $script)
     {
-        if (($temp = tmpfile()) === false) {
+        $temp = tmpfile();
+
+        if ($temp === false) {
             throw new Exception('Error creating temporary file.');
         }
 

@@ -2,6 +2,8 @@
 
 namespace TexLab\R;
 
+use Exception;
+
 abstract class AbstractScript
 {
     protected string $header = '';
@@ -27,15 +29,22 @@ FOOTER
     /**
      * @param string $result
      * @return array<mixed, mixed>
+     * @throws Exception
      */
     protected function parseVars(string $result)
     {
         preg_match_all("/($this->prefix(.*)) = (.*)(\n|$)/", $result, $matches);
 
-        return (array)array_combine(
+        $result = array_combine(
             $matches[1],
             $matches[3]
         );
+
+        if ($result === false) {
+            throw new Exception('Error parsing results.');
+        }
+
+        return $result;
     }
 
     /**
