@@ -5,14 +5,16 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-    
+
 jobs:
   run:
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
-        operating-system: [ ubuntu-latest, macOS-latest ]
+        operating-system: [ ubuntu-latest, windows-latest, macOS-latest ]
+
     name: Test on ${{ matrix.operating-system }}
+
     steps:
       - uses: actions/checkout@v2
 
