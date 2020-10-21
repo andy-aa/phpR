@@ -5,24 +5,25 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+    
+jobs:
+  run:
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        operating-system: [ ubuntu-latest, macOS-latest ]
+    name: Test on ${{ matrix.operating-system }}
+    steps:
+      - uses: actions/checkout@v2
 
-run:
-  runs-on: ${{ matrix.operating-system }}
-  strategy:
-    matrix:
-      operating-system: [ ubuntu-latest, macOS-latest ]
-  name: Test on ${{ matrix.operating-system }}
-  steps:
-    - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
 
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress --no-suggest
+      - name: Check out R version
+        run: R --version
 
-    - name: Check out R version
-      run: R --version
-
-    - name: Run test suite
-      run: composer ci:test
+      - name: Run test suite
+        run: composer ci:test
 
 #
 #jobs:
