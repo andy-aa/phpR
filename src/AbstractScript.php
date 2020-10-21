@@ -1,8 +1,6 @@
 <?php
 
-
 namespace TexLab\R;
-
 
 abstract class AbstractScript
 {

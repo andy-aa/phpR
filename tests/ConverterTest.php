@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
+namespace Test;
+
 use PHPUnit\Framework\TestCase;
 use TexLab\R\Converter;
-
 
 class ConverterTest extends TestCase
 {
 
-    function testOption(): void
+    public function testOption(): void
     {
         $converter = new Converter();
 //        $converter = new class() { use Converter; };
@@ -35,5 +36,4 @@ class ConverterTest extends TestCase
             )
         );
     }
-
 }

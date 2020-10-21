@@ -1,8 +1,6 @@
 <?php
 
-
 namespace TexLab\R;
-
 
 class Script extends AbstractScript
 {
@@ -37,7 +35,6 @@ class Script extends AbstractScript
 //        $result = $this->runner->run($this->getFullScript());
 
         return $this->parseVars($this->runner->run($this->getFullScript()));
-
     }
 
     /**
@@ -61,5 +58,4 @@ class Script extends AbstractScript
         $this->addHeader($this->converter->dataFrame($name, $data));
         return $this;
     }
-
 }

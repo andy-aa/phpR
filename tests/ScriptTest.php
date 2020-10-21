@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
+namespace Test;
+
 use PHPUnit\Framework\TestCase;
 use TexLab\R\Runner;
 use TexLab\R\Script;
-
 
 class ScriptTest extends TestCase
 {
@@ -19,7 +20,7 @@ class ScriptTest extends TestCase
         $this->script = new Script(new Runner());
     }
 
-    function testOption(): void
+    public function testOption(): void
     {
 
         $this->assertEquals(
@@ -54,5 +55,4 @@ class ScriptTest extends TestCase
 //                ->run("php_x = sum(x+y)")
 //        );
     }
-
 }

@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
+namespace Test;
+
 use PHPUnit\Framework\TestCase;
 use TexLab\R\Runner;
-
 
 class RunnerTest extends TestCase
 {
@@ -18,7 +19,7 @@ class RunnerTest extends TestCase
         $this->runner = new Runner();
     }
 
-    function testOption(): void
+    public function testOption(): void
     {
 
         $this->assertEquals(
@@ -27,21 +28,17 @@ class RunnerTest extends TestCase
         );
 
         $this->assertEquals(
-            " [1]  1  2  3  4  5  6  7  8  9 10\n [1]   1   4   9  16  25  36  49  64  81 100"
-            ,
+            " [1]  1  2  3  4  5  6  7  8  9 10\n [1]   1   4   9  16  25  36  49  64  81 100",
             $this->runner->run("x=1:10\nprint(x)\nprint(x**2)")
         );
 
         $this->assertEquals(
-
             "\n" .
             "Call:\n" .
             "lm(formula = x ~ y)\n\n" .
             "Coefficients:\n" .
             "(Intercept)            y\n" .
-            "  1.123e-15    1.000e+00\n"
-
-            ,
+            "  1.123e-15    1.000e+00\n",
             $this->runner->run(<<<RSCRIPT
 x=1:10
 y=1:10
@@ -49,7 +46,5 @@ lm(x~y)
 RSCRIPT
             )
         );
-
     }
-
 }

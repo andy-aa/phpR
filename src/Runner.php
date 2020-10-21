@@ -41,7 +41,6 @@ class Runner implements RunnerInterface
         fclose($temp);
 
         return join("\n", $output);
-
     }
 
     /**

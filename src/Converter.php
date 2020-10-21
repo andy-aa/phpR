@@ -1,8 +1,6 @@
 <?php
 
-
 namespace TexLab\R;
-
 
 class Converter
 {
@@ -30,5 +28,4 @@ class Converter
 
         return "$name <- data.frame(" . join(', ', $columns) . ");\n";
     }
-
 }
