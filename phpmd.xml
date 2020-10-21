@@ -13,7 +13,7 @@
     <rule ref="rulesets/codesize.xml"/>
 
     <rule ref="rulesets/cleancode.xml">
-        <exclude name="UndefinedVariable"/>
+<!--        <exclude name="UndefinedVariable"/>-->
     </rule>
 
     <rule ref="rulesets/controversial.xml"/>

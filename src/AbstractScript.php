@@ -30,6 +30,8 @@ FOOTER
      * @param string $result
      * @return array<mixed, mixed>
      * @throws Exception
+     *
+     * @SuppressWarnings(PHPMD.UndefinedVariable)
      */
     protected function parseVars(string $result)
     {
