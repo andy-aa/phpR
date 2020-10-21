@@ -12,14 +12,19 @@ composer require texlab/r
 ```
 
 ### usage example
+####PHP code
 ```php
 <?php
+
+header("Content-Type: text/plain");
 
 use TexLab\R\Runner;
 
 require "../vendor/autoload.php";
 
-$r = new Runner();
+$path = '"c:\\Program Files\\R\\R-3.6.3\\bin\\Rscript.exe"';
+
+$r = new Runner($path);
 
 $code = <<<R
 x=1:10
@@ -29,7 +34,7 @@ R;
 
 echo $r->run($code);
 ```
-### output
+#### output
 ```
 Call:
 lm(formula = y ~ x)
@@ -48,5 +53,52 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 Residual standard error: 1.067 on 8 degrees of freedom
 Multiple R-squared:  0.9094,    Adjusted R-squared:  0.8981
 F-statistic: 80.29 on 1 and 8 DF,  p-value: 1.914e-05
+
+```
+####PHP code
+```php
+<?php
+
+use TexLab\R\Script;
+use TexLab\R\Runner;
+
+require "../vendor/autoload.php";
+
+$r = new Script(new Runner());
+
+
+$code = <<<R
+library(base64enc)
+
+temp_file_name <- tempfile()
+
+png(file = temp_file_name, width = 300, height = 300, units = "px");
+
+hist(x=rnorm(1000), col='blue');
+
+dev.off();
+
+php_plot_data <- paste("data:image/png;base64,", base64enc::base64encode(temp_file_name))
+
+file.remove(temp_file_name)
+
+R;
+
+$data = $r->run($code)
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="<?= $data['php_plot_data'] ?>">
+</body>
+</html>
+```
+#### output
+```
 
 ```
