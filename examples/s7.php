@@ -13,7 +13,7 @@ library(base64enc)
 
 temp_file_name <- tempfile()
 
-png(file = temp_file_name);
+png(file = temp_file_name, width = 300, height = 300, units = "px");
 
 hist(x=rnorm(1000), col='blue');
 
