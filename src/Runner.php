@@ -40,10 +40,10 @@ class Runner implements RunnerInterface
         exec(
             "$this->path " . stream_get_meta_data($temp)['uri'],
             $output,
-            $return_var
+            $returnVar
         );
 
-        if ($return_var !== 0) {
+        if ($returnVar !== 0) {
             throw new Exception('Error execution R code.');
         }
 
