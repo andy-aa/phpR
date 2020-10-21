@@ -6,36 +6,53 @@ on:
   pull_request:
     branches: [ master ]
 
-jobs:
-  ubuntu:
+run:
+  runs-on: ${{ matrix.operating-system }}
+  strategy:
+    matrix:
+      operating-system: [ ubuntu-latest, macOS-latest ]
+  name: Test on ${{ matrix.operating-system }}
+  steps:
+    - uses: actions/checkout@v2
 
-    runs-on: ubuntu-latest
+        - name: Install dependencies
+          run: composer install --prefer-dist --no-progress --no-suggest
 
-    steps:
-      - uses: actions/checkout@v2
+        - name: Check out R version
+          run: R --version
 
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
-
-      - name: Check out R version
-        run: R --version
-
-      - name: Run test suite
-        run: composer ci:test
-
-  macOS:
-
-    runs-on: macOS-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
-
-      - name: Check out R version
-        run: R --version
-
-      - name: Run test suite
-        run: composer ci:test
-        
+        - name: Run test suite
+          run: composer ci:test
+#
+#jobs:
+#  ubuntu:
+#
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v2
+#
+#      - name: Install dependencies
+#        run: composer install --prefer-dist --no-progress --no-suggest
+#
+#      - name: Check out R version
+#        run: R --version
+#
+#      - name: Run test suite
+#        run: composer ci:test
+#
+#  macOS:
+#
+#    runs-on: macOS-latest
+#
+#    steps:
+#      - uses: actions/checkout@v2
+#
+#      - name: Install dependencies
+#        run: composer install --prefer-dist --no-progress --no-suggest
+#
+#      - name: Check out R version
+#        run: R --version
+#
+#      - name: Run test suite
+#        run: composer ci:test
