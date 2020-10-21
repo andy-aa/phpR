@@ -1,0 +1,11 @@
+name: Continuous Integration
+
+on: [pull_request]
+
+jobs:
+  quality:
+    name: Quality checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
