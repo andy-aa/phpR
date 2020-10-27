@@ -6,9 +6,7 @@ use TexLab\R\Runner;
 
 require "../vendor/autoload.php";
 
-$path = '"c:\\Program Files\\R\\R-3.6.3\\bin\\Rscript.exe"';
-
-$r = new Runner($path);
+$r = new Runner();
 
 $code = <<<R
 x=1:10
