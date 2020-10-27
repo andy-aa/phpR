@@ -13,6 +13,8 @@ $dataArray = [
 ];
 
 $code = <<<R
+#install.packages("base64enc")
+
 library(base64enc)
 
 temp_file_name <- tempfile()

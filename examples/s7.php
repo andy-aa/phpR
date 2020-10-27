@@ -9,6 +9,8 @@ $r = new Script(new Runner());
 
 
 $code = <<<R
+#install.packages("base64enc")
+
 library(base64enc)
 
 temp_file_name <- tempfile()
