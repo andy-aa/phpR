@@ -7,4 +7,4 @@ services:
       - "8000:80"
     volumes:
       - .:/var/www/html
-    command: composer install --no-dev
+#    command: composer install --no-dev
