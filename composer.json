@@ -32,6 +32,6 @@
     "phpmd": "phpmd src text /phpmd.xml",
     "phpstan": "phpstan analyse -c phpstan.neon",
     "psalm": "psalm",
-    "examples": "php -S localhost:8000 -t examples/"
+    "examples": "php -S localhost:8080 -t examples/"
   }
 }
